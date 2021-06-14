@@ -1,16 +1,9 @@
-import argparse
 import numpy as np
 from typing import Callable, List
 
 import cv2
 
 from utils import constants
-
-
-def parse_args():
-    args = argparse.ArgumentParser()
-    args.add_argument("--filename", type=str)
-    return args.parse_args()
 
 
 def read_image_grayscale(filepath):
@@ -83,4 +76,6 @@ def get_output_filename(filepath):
 
 
 def collider_transform(image, color):
-    pass
+    bw = convert_to_black_and_white(image)
+    three = convert_to_3_channel(bw)
+    return apply_color_to_layer(three, color)
