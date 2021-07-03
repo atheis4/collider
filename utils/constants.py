@@ -17,7 +17,12 @@ class Orientation(enum.Enum):
     VERTICAL = "vertical"
 
 
-COLORS = {
+class Camera(enum.IntEnum):
+    FACETIME_CAM = 0
+    WEBCAM = 1
+
+
+PRIMARY_COLORS = {
     "red": Color.RED,
     "green": Color.GREEN,
     "blue": Color.BLUE,

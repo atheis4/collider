@@ -45,7 +45,7 @@ for image in additive_images:
     inv_b_w = invert_black_and_white(b_w)
     three_channel = convert_to_3_channel(b_w)
     inv_three_channel = convert_to_3_channel(inv_b_w)
-    for color, value in constants.COLORS.items():
+    for color, value in constants.PRIMARY_COLORS.items():
         current_layer = apply_color_layer(three_channel, value)
         img_to_layer[image].append(current_layer)
         current_layer = apply_color_layer(inv_three_channel, value)
